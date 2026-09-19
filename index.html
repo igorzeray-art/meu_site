@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Multiverso News</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #101010;
+        color: white;
+      }
+
+      header {
+        background-color: #080808;
+        border-bottom: 3px solid #d62818;
+      }
+
+      .topo {
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 20px;
+      }
+
+      .topo h1 {
+        color: #e63919;
+        font-size: 34px;
+        background-color: #070707;
+      }
+
+      .topo p {
+        color: #999;
+        margin-top: 8px;
+      }
+
+      nav {
+        background-color: #151515;
+        padding: 15px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #e63919;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 35px 20px;
+      }
+
+      .alerta {
+        background-color: #b51d0f;
+        padding: 12px 20px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .principal {
+        display: flex;
+        background-color: #1b1b1b;
+        margin-bottom: 50px;
+      }
+
+      .principal-imagem {
+        width: 60%;
+      }
+
+      .principal-imagem img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+      }
+
+      .principal-texto {
+        width: 40%;
+        padding: 40px;
+      }
+
+      .categoria {
+        color: #e63919;
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      .principal-texto h2 {
+        font-size: 36px;
+        margin: 15px 0;
+      }
+
+      .principal-texto p {
+        color: #bbb;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .botao {
+        display: inline-block;
+        background-color: #e63919;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+      }
+
+      .titulo {
+        margin-bottom: 25px;
+      }
+
+      .titulo h2 {
+        font-size: 28px;
+      }
+
+      .linha {
+        width: 55px;
+        height: 3px;
+        background-color: #e63919;
+        margin-top: 8px;
+      }
+
+      .noticias {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .noticia {
+        background-color: #1b1b1b;
+      }
+
+      .noticia img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .noticia-conteudo {
+        padding: 20px;
+      }
+
+      .noticia h3 {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      .noticia p {
+        color: #aaa;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .noticia a {
+        display: inline-block;
+        margin-top: 15px;
+        color: #e63919;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .investigacao {
+        margin-top: 60px;
+        background-color: #191919;
+        padding: 35px;
+      }
+
+      .investigacao-conteudo {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .investigacao-imagem {
+        width: 50%;
+      }
+
+      .investigacao-imagem img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+      }
+
+      .investigacao-texto {
+        width: 50%;
+      }
+
+      .investigacao-texto h2 {
+        color: #e63919;
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+
+      .investigacao-texto p {
+        color: #bbb;
+        line-height: 1.7;
+        margin-bottom: 15px;
+      }
+
+      .perigo {
+        margin-top: 60px;
+      }
+
+      .perigo-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .perigo-card {
+        background-color: #1b1b1b;
+        padding: 25px;
+        border-top: 3px solid #e63919;
+      }
+
+      .perigo-card h3 {
+        margin-bottom: 10px;
+      }
+
+      .perigo-card p {
+        color: #aaa;
+        line-height: 1.5;
+      }
+
+      .materia {
+        margin-top: 60px;
+        background-color: #1b1b1b;
+        padding: 35px;
+      }
+
+      .materia h2 {
+        font-size: 34px;
+        margin: 10px 0 25px;
+      }
+
+      .materia img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        margin-bottom: 25px;
+      }
+
+      .materia p {
+        max-width: 950px;
+        color: #bbb;
+        line-height: 1.7;
+        margin-bottom: 15px;
+      }
+
+      footer {
+        background-color: #070707;
+        border-top: 3px solid #e63919;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 60px;
+      }
+
+      footer h2 {
+        color: #e63919;
+      }
+
+      footer p {
+        color: #888;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 800px) {
+        .principal {
+          display: block;
+        }
+
+        .principal-imagem,
+        .principal-texto {
+          width: 100%;
+        }
+
+        .principal-texto h2 {
+          font-size: 28px;
+        }
+
+        .noticias,
+        .perigo-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .investigacao-conteudo {
+          display: block;
+        }
+
+        .investigacao-imagem,
+        .investigacao-texto {
+          width: 100%;
+        }
+
+        .investigacao-texto {
+          margin-top: 20px;
+        }
+
+        nav a {
+          display: block;
+          margin: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="topo">
+        <h1>⚡ MULTIVERSO NEWS</h1>
+
+        <p>Notícias, acontecimentos e mistérios do universo</p>
+      </div>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#investigacao">Investigação</a>
+        <a href="#perigo">Ameaça</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <div class="alerta">
+        🚨 ÚLTIMA HORA — NOVA AMEAÇA TECNOLÓGICA É AVISTADA
+      </div>
+
+      <section class="principal">
+        <div class="principal-imagem">
+          <!-- COLOQUE A IMAGEM PRINCIPAL AQUI -->
+          <img src="imagens/bicho.jpg" alt="bicho">
+           
+        </div>
+
+        <div class="principal-texto">
+          <span class="categoria">URGENTE</span>
+
+          <h2>Criatura misteriosa aparece usando uma poderosa tecnologia</h2>
+
+          <p>
+            Uma criatura desconhecida foi vista utilizando uma armadura metálica
+            capaz de disparar rajadas de energia. Testemunhas afirmam que o ser
+            utilizou os poderes para atacar a cidade.
+          </p>
+
+          <a href="#materia" class="botao"> Ler matéria </a>
+        </div>
+      </section>
+
+      <section id="noticias">
+        <div class="titulo">
+          <h2>Últimas notícias</h2>
+
+          <div class="linha"></div>
+        </div>
+
+        <div class="noticias">
+          <article class="noticia">
+            <!-- COLOQUE A IMAGEM AQUI -->
+            <img src="imagens/narua.jpg" alt="rua">
+            <div class="noticia-conteudo">
+              <span class="categoria">AVISTAMENTO</span>
+
+              <h3>Moradores relatam criatura voando sobre a cidade</h3>
+
+              <p>
+                Diversas pessoas afirmam ter visto uma figura metálica voando
+                durante a noite.
+              </p>
+
+              <a href="#">Leia mais →</a>
+            </div>
+          </article>
+
+          <article class="noticia">
+            <!-- COLOQUE A IMAGEM AQUI -->
+            <img src="imagens/destruicao.jpg" alt="destruicao">
+            <div class="noticia-conteudo">
+              <span class="categoria">ATAQUE</span>
+
+              <h3>Rajadas de energia deixam moradores assustados</h3>
+
+              <p>
+                A criatura teria utilizado uma espécie de energia para destruir
+                veículos e estruturas.
+              </p>
+
+              <a href="#">Leia mais →</a>
+            </div>
+          </article>
+
+          <article class="noticia">
+            <!-- COLOQUE A IMAGEM AQUI -->
+            <img src="imagens/armadura.jpg" alt="armadura">
+
+            <div class="noticia-conteudo">
+              <span class="categoria">TECNOLOGIA</span>
+
+              <h3>Armadura possui tecnologia nunca vista antes</h3>
+
+              <p>
+                Especialistas tentam descobrir de onde veio a tecnologia
+                utilizada pela criatura.
+              </p>
+
+              <a href="#">Leia mais →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="investigacao" class="investigacao">
+        <div class="titulo">
+          <h2>Investigação</h2>
+
+          <div class="linha"></div>
+        </div>
+
+        <div class="investigacao-conteudo">
+          <div class="investigacao-imagem">
+            <!-- COLOQUE A IMAGEM AQUI -->
+            <img src="imagens/noticia.jpg" alt="noticiario">
+              alt="Investigação sobre a criatura"
+            />
+          </div>
+
+          <div class="investigacao-texto">
+            <h2>Quem é essa criatura?</h2>
+
+            <p>
+              Até o momento, ninguém sabe exatamente de onde o ser surgiu. Sua
+              aparência lembra uma máquina, mas seu comportamento indica que
+              existe algo diferente por trás da armadura.
+            </p>
+
+            <p>
+              As autoridades estão investigando os acontecimentos enquanto novas
+              imagens continuam surgindo nas redes sociais.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="perigo" class="perigo">
+        <div class="titulo">
+          <h2>Por que ele é perigoso?</h2>
+
+          <div class="linha"></div>
+        </div>
+
+        <div class="perigo-cards">
+          <div class="perigo-card">
+            <h3>⚡ Rajadas de energia</h3>
+
+            <p>
+              A criatura consegue disparar grandes quantidades de energia
+              através das mãos.
+            </p>
+          </div>
+
+          <div class="perigo-card">
+            <h3>🚀 Voo</h3>
+
+            <p>
+              O sistema da armadura permite que o ser se movimente rapidamente
+              pelo ar.
+            </p>
+          </div>
+
+          <div class="perigo-card">
+            <h3>🦾 Força elevada</h3>
+
+            <p>
+              A estrutura metálica aumenta sua resistência e capacidade física.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="materia" class="materia">
+        <span class="categoria">ESPECIAL MULTIVERSO NEWS</span>
+
+        <h2>O surgimento de uma nova ameaça</h2>
+
+        <!-- COLOQUE A IMAGEM PRINCIPAL DA MATÉRIA AQUI -->
+        <img src="imagens/surgimento.jpg" alt="surgimento">
+
+        <p>
+          O aparecimento da criatura chamou a atenção de especialistas em
+          tecnologia. A armadura apresenta sistemas capazes de produzir energia
+          e permitir que o usuário voe.
+        </p>
+
+        <p>
+          O mais preocupante, segundo testemunhas, é que a criatura não parece
+          utilizar seus poderes para proteger as pessoas. Pelo contrário, os
+          ataques indicam que ela pretende causar destruição.
+        </p>
+
+        <p>
+          Ainda não existem informações suficientes para descobrir quem criou a
+          armadura ou qual é o verdadeiro objetivo da criatura.
+        </p>
+
+        <p>
+          O Multiverso News continuará acompanhando o caso e trazendo novas
+          informações assim que elas forem descobertas.
+        </p>
+      </section>
+    </main>
+
+    <footer id="sobre">
+      <h2>⚡ MULTIVERSO NEWS</h2>
+
+      <p>Informação sobre os acontecimentos mais estranhos do multiverso.</p>
+      <p>© 2026 Multiverso News</p>
+    </footer>
+  </body>
+</html>
